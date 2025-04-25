@@ -35,6 +35,7 @@ class Map:
         self.map = [[0 for _ in range(width)] for _ in range(length)]
         self.obstacles = obstacles
         self.test_name = test_name
+        self.push_count = 0
 
         self.explored_states = 0
         self.undo_moves = 0
@@ -298,6 +299,7 @@ class Map:
         new_map.positions_of_boxes = self.positions_of_boxes.copy()
         new_map.explored_states = self.explored_states
         new_map.undo_moves = self.undo_moves
+        new_map.push_count = self.push_count
         return new_map
 
     def get_neighbours(self):
